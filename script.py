@@ -39,7 +39,7 @@ matches = []
 for groups in phone_regex.findall(page_html):
     phone_numbers = '-'.join(
         [groups[1], groups[3], groups[5], groups[7]]
-    ).replace(' ','').replace(')-',')')
+    ).replace(' ','').replace(')-',')').replace('8(','+7(')
     matches.append(phone_numbers)
 print('Телефон компании:')
 print('\n'.join(list(set(matches))))
